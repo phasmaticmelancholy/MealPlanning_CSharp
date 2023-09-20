@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MealPlanning_CSharp.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Recipes";
+}
+
+<h1>Recipes</h1>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <dt>@Html.DisplayFor(model => item.Url)</dt>
+        <dt>@Html.DisplayFor(model => item.PreparationTime)</dt>
+    }
+</div>

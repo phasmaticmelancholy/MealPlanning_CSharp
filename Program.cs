@@ -1,7 +1,13 @@
+using MealPlanning_CSharp.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<MealplanningContext>(options => options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 
